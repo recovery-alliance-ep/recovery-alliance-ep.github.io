@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Recovery Alliance of El Paso — call, message, or visit us to connect with a peer and learn about our programs." />
+  <title>Contact — Recovery Alliance of El Paso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- SHARED HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Recovery Alliance of El Paso — home">
+        <span class="site-logo__name">Recovery Alliance</span>
+        <span class="site-logo__tagline">of El Paso</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul role="list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="peer-support.html">Peer Support</a></li>
+          <li><a href="punto-de-partida.html">Punto de Partida</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="tel:+19155947000" class="header-phone" aria-label="Call Recovery Alliance at (915) 594-7000">(915) 594-7000</a>
+      <button id="nav-toggle" class="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="peer-support.html">Peer Support</a>
+      <a href="punto-de-partida.html">Punto de Partida</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="tel:+19155947000" class="mobile-nav__phone" aria-label="Call Recovery Alliance at (915) 594-7000">☎ (915) 594-7000</a>
+    </nav>
+  </header>
+  <!-- /SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="page-heading">
+      <div class="container">
+        <span class="eyebrow">Get connected</span>
+        <h1 id="page-heading" class="page-hero__heading">Contact Recovery Alliance</h1>
+        <p class="page-hero__intro">Call, message, or visit us. A peer is ready to help you take the next step.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section section--white" aria-labelledby="contact-options-heading">
+      <div class="container content-aside">
+
+        <!-- Contact form -->
+        <div>
+          <span class="eyebrow eyebrow--dark">Send a message</span>
+          <h2 id="contact-options-heading" style="font-size:clamp(var(--text-2xl),3vw,var(--text-3xl));color:var(--color-navy);margin-bottom:var(--space-6);">
+            We'll get back to you.
+          </h2>
+
+          <!--
+            NOTE: GitHub Pages cannot process forms server-side.
+                  The action URL below is a placeholder — replace with a Formspree
+                  (or equivalent) endpoint once an RAEP-owned account is created.
+          -->
+          <!-- TODO: Replace action="TODO-FORM-ENDPOINT" with the confirmed Formspree
+                     (or other form service) endpoint once RAEP's account is set up. -->
+          <form
+            class="contact-form"
+            action="TODO-FORM-ENDPOINT"
+            method="POST"
+            aria-label="Contact form"
+          >
+            <!-- Formspree honeypot spam filter -->
+            <input type="text" name="_gotcha" style="display:none;" tabindex="-1" aria-hidden="true" />
+
+            <div class="form-group">
+              <label for="name">Your name <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                aria-required="true"
+                placeholder="First and last name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="(915) 000-0000"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="topic">What can we help with?</label>
+              <select id="topic" name="topic">
+                <option value="">— Select a topic —</option>
+                <option value="peer-support">Peer support / recovery coaching</option>
+                <option value="casa-vida">Casa Vida de Salud (residential)</option>
+                <option value="alas-nuevas">Alas Nuevas (women's residential)</option>
+                <option value="reentry">Re-entry program</option>
+                <option value="punto-de-partida">Punto de Partida / naloxone</option>
+                <option value="dwi">DWI program</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                aria-required="true"
+                placeholder="Tell us a little about what you're looking for…"
+              ></textarea>
+            </div>
+
+            <p style="font-size:var(--text-xs);color:#777;line-height:1.6;margin-bottom:var(--space-2);">
+              This form sends a message to Recovery Alliance staff. It is not monitored
+              24/7. For urgent needs, please call
+              <a href="tel:+19155947000" style="font-weight:700;">(915) 594-7000</a> or
+              text/call <a href="tel:988" style="font-weight:700;">988</a>.
+            </p>
+
+            <button type="submit" class="btn btn--primary" style="align-self:flex-start;">
+              Send message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact info aside -->
+        <div>
+          <div class="info-box">
+            <p class="info-box__heading">Call or visit</p>
+            <address style="font-style:normal;font-size:var(--text-sm);line-height:2;color:#555;">
+              <strong><a href="tel:+19155947000" style="color:var(--color-navy);">(915) 594-7000</a></strong><br />
+              <!-- TODO: Add confirmed physical address. -->
+              <!-- TODO: Add confirmed email address. -->
+              <!-- TODO: Add confirmed office hours. -->
+            </address>
+          </div>
+
+          <div class="info-box" style="margin-top:var(--space-4);">
+            <p class="info-box__heading">Connect with us</p>
+            <p style="font-size:var(--text-sm);color:#555;line-height:1.8;">
+              <!-- TODO: Add Facebook page URL when confirmed. -->
+              <!-- TODO: Add any other social media links when confirmed. -->
+            </p>
+          </div>
+
+          <div class="info-box" style="margin-top:var(--space-4);">
+            <p class="info-box__heading">In a crisis — call now</p>
+            <p style="font-size:var(--text-sm);color:#555;line-height:1.8;">
+              <strong>988</strong> — Suicide &amp; Crisis Lifeline<br />
+              Call or text <a href="tel:988"><strong>988</strong></a> anytime.<br /><br />
+              In an emergency, call <a href="tel:911"><strong>911</strong></a>.
+            </p>
+          </div>
+
+          <div class="info-box" style="margin-top:var(--space-4);">
+            <p class="info-box__heading">Peer support complements professional care</p>
+            <p style="font-size:var(--text-xs);color:#777;line-height:1.7;">
+              Recovery Alliance peer coaches are not licensed clinicians. Peer support
+              is not a substitute for therapy, clinical treatment, or emergency services.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-brand__name">Recovery Alliance of El Paso</p>
+          <p class="footer-brand__tagline">A peer-led Recovery Community Organization serving El Paso and West Texas. No stigma. No shame.</p>
+          <a href="tel:+19155947000" class="footer-brand__phone" aria-label="Call Recovery Alliance at (915) 594-7000">(915) 594-7000</a>
+          <!-- TODO: Add physical address when confirmed. -->
+          <!-- TODO: Add email address when confirmed. -->
+          <!-- TODO: Add hours of operation when confirmed. -->
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3>Navigation</h3>
+          <ul role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="peer-support.html">Peer Support</a></li>
+            <li><a href="punto-de-partida.html">Punto de Partida</a></li>
+            <li><a href="casa-vida.html">Casa Vida</a></li>
+            <li><a href="alas-nuevas.html">Alas Nuevas</a></li>
+            <li><a href="reentry.html">Re-entry</a></li>
+            <li><a href="dwi-program.html">DWI Program</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h3>Connect</h3>
+          <address>
+            <!-- TODO: Insert physical address when confirmed. -->
+            <!-- TODO: Insert email address when confirmed. -->
+            <!-- TODO: Insert Facebook page URL when confirmed. -->
+            <!-- TODO: Add additional social media links if applicable. -->
+            <a href="tel:+19155947000">(915) 594-7000</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer-crisis">
+        <p class="footer-crisis__line">Crisis line: call or text <a href="tel:988">988</a></p>
+        <p class="footer-crisis__line" style="font-weight:400;color:var(--color-text-muted);font-size:var(--text-xs);">In a crisis, call or text 988. In an emergency, call 911.</p>
+      </div>
+      <div class="footer-copy">
+        <p>© 2026 Recovery Alliance of El Paso (El Paso Alliance Inc.)</p>
+        <p><!-- TODO: Add privacy policy link when page is created. --></p>
+      </div>
+    </div>
+  </footer>
+  <!-- /SHARED FOOTER -->
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
