@@ -1352,3 +1352,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-8);
   line-height: 1.7;
 }
+
+/* Text on brown is always solid black (contrast) */
+.section--royal .eyebrow { color: var(--black); opacity: 1; }
+.section--royal h2, .section--royal h3, .section--royal p, .section--royal li,
+.card--royal, .community-right__heading, .community-right__body,
+.community-card__heading, .community-card__body { color: var(--black); opacity: 1; }

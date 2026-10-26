@@ -213,3 +213,13 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 - Update outside listings (Google, Facebook, treatment directories) when the site launches;
   claim the unclaimed directory listing and fix its "Private Pay" tag
 - Donate page / Giving Day link
+
+## Brand colors (from the RAEP logo)
+- Tokens in `assets/css/styles.css`: `--black #111111`, `--yellow #FFE500`, `--red #E01B24`, `--brown #B08468`, `--brown-dark #7A5638`, `--white #FFFFFF`, `--offwhite #FAF7F2`
+- Header, footer, heroes: `--black`. Normal sections: `--offwhite`. Cards/alternating bands: `--brown`.
+- Yellow is for accents only, on black backgrounds or as a button fill with black text. Never yellow text on white, off-white, or brown.
+- `--brown` is for backgrounds only. Brown text uses `--brown-dark`.
+- Text on brown is solid `--black`, never transparent.
+- Red (`btn--danger`) only for the most urgent action: Get Help Now / Get Naloxone.
+- Logo: `assets/img/logo-mark.png` in the header on a white badge; `assets/img/logo-full.png` for the home page, on a light background.
+- Note: class names `section--royal` (now brown) and `section--navy` (now black) are leftovers from the old palette.
