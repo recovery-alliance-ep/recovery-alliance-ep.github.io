@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -32,11 +32,17 @@
   <header class="site-header" role="banner">
     <div class="container">
       <a href="index.html" class="site-logo" aria-label="Recovery Alliance of El Paso — home">
-        <span class="site-logo__name">Recovery Alliance</span>
-        <span class="site-logo__tagline">of El Paso</span>
+        <span class="site-logo__badge">
+          <img src="assets/img/logo-mark.png" alt="" width="28" height="28" aria-hidden="true" />
+        </span>
+        <span class="site-logo__text">
+          <span class="site-logo__name">Recovery Alliance</span>
+          <span class="site-logo__tagline">of El Paso</span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <ul role="list">
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="peer-support.html">Peer Support</a></li>
@@ -52,6 +58,7 @@
       </button>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="peer-support.html">Peer Support</a>
@@ -150,7 +157,7 @@
 
           <div class="info-box" style="margin-top:var(--space-4);">
             <p class="info-box__heading">Other programs</p>
-            <a href="services.html" class="link-arrow" style="color:var(--color-royal);font-size:var(--text-sm);">See all services</a>
+            <a href="services.html" class="link-arrow" style="color:var(--brown-dark);font-size:var(--text-sm);">See all services</a>
           </div>
         </div>
 
@@ -161,17 +168,17 @@
     <section class="section section--royal" aria-labelledby="dwi-cta-heading">
       <div class="container" style="text-align:center;max-width:600px;">
         <span class="eyebrow">Take the next step</span>
-        <h2 id="dwi-cta-heading" style="font-size:clamp(var(--text-2xl),4vw,var(--text-3xl));color:#fff;margin-bottom:var(--space-4);">
+        <h2 id="dwi-cta-heading" style="font-size:clamp(var(--text-2xl),4vw,var(--text-3xl));color:var(--black);margin-bottom:var(--space-4);">
           Questions about the DWI program?
         </h2>
-        <p style="color:rgba(255,255,255,0.8);margin-bottom:var(--space-6);font-size:var(--text-lg);">
+        <p style="color:rgba(0,0,0,0.75);margin-bottom:var(--space-6);font-size:var(--text-lg);">
           Call or message us. A peer can help clarify the process.
         </p>
         <a href="contact.html" class="btn btn--primary">Get in touch</a>
-        <p style="margin-top:var(--space-4);font-size:var(--text-xs);color:rgba(255,255,255,0.6);">
+        <p style="margin-top:var(--space-4);font-size:var(--text-xs);color:rgba(0,0,0,0.55);">
           Peer support complements professional care; it is not a substitute for therapy or emergency services.
-          In a crisis, call or text <a href="tel:988" style="color:var(--color-gold);font-weight:700;">988</a>.
-          In an emergency, call <a href="tel:911" style="color:var(--color-gold);font-weight:700;">911</a>.
+          In a crisis, call or text <a href="tel:988" style="color:var(--black);font-weight:700;text-decoration:underline;">988</a>.
+          In an emergency, call <a href="tel:911" style="color:var(--black);font-weight:700;text-decoration:underline;">911</a>.
         </p>
       </div>
     </section>
@@ -193,7 +200,8 @@
         <nav class="footer-nav" aria-label="Footer navigation">
           <h3>Navigation</h3>
           <ul role="list">
-            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="peer-support.html">Peer Support</a></li>
             <li><a href="punto-de-partida.html">Punto de Partida</a></li>

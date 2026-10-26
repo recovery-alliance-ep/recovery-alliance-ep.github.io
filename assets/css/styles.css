@@ -7,26 +7,26 @@
    1. Design tokens
    ----------------------------------------------------------------------------- */
 :root {
-  /* Colors */
-  --color-navy:       #0B0D3A;   /* deep navy — primary dark background */
-  --color-royal:      #2B22D9;   /* royal blue — section bands */
-  --color-gold:       #E6C640;   /* gold — accent, primary buttons, highlighted text */
-  --color-white:      #FFFFFF;
-  --color-off-white:  #F5F5F5;   /* light section backgrounds */
-  --color-text-dark:  #111111;   /* near-black text on light/gold surfaces */
-  --color-text-light: #FFFFFF;   /* white text on dark surfaces */
-  --color-text-muted: #C8CADF;   /* muted on dark backgrounds */
-  --color-border:     rgba(255 255 255 / 0.15);
+  /* Brand palette */
+  --black:      #111111;   /* primary dark — headers, footers, hero backgrounds */
+  --yellow:     #FFE500;   /* accent — buttons, active nav underline, phone number */
+  --red:        #E01B24;   /* urgent-action only — Get Help Now / Get Naloxone */
+  --brown:      #B08468;   /* backgrounds only — section bands, cards */
+  --brown-dark: #7A5638;   /* text only — eyebrows, timeline years, links on light bg */
+  --white:      #FFFFFF;
+  --offwhite:   #FAF7F2;   /* normal light section backgrounds */
 
-  /* Logo accent colors (use sparingly) */
-  --color-logo-red:   #C0392B;
-  --color-logo-tan:   #D4A574;
+  /* Semantic aliases (used in component rules below) */
+  --color-text-dark:  #111111;   /* near-black text on light/yellow surfaces */
+  --color-text-light: #FFFFFF;   /* white text on dark surfaces */
+  --color-text-muted: #C8C8C8;   /* muted on dark backgrounds */
+  --color-border:     rgba(255 255 255 / 0.15);
 
   /* Typography */
   --font-heading: 'Poppins', sans-serif;
   --font-body:    'Open Sans', sans-serif;
 
-  /* Font sizes (fluid between 375 px and 1280 px) */
+  /* Font sizes */
   --text-xs:   0.75rem;    /* 12 px */
   --text-sm:   0.875rem;   /* 14 px */
   --text-base: 1rem;       /* 16 px */
@@ -87,7 +87,7 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--color-text-dark);
-  background-color: var(--color-white);
+  background-color: var(--white);
 }
 
 img, svg {
@@ -120,7 +120,7 @@ button {
   left: var(--space-4);
   z-index: 9999;
   padding: var(--space-2) var(--space-4);
-  background: var(--color-gold);
+  background: var(--yellow);
   color: var(--color-text-dark);
   font-weight: 700;
   border-radius: var(--radius-sm);
@@ -148,21 +148,29 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--yellow);
   margin-bottom: var(--space-3);
 }
 
+/* Eyebrow on light backgrounds — use dark text, not yellow on white */
 .eyebrow--light {
   color: var(--color-text-muted);
 }
 
 .eyebrow--dark {
-  color: var(--color-text-dark);
+
+  color: var(--brown-dark);
+}
+
+/* Eyebrow on brown section background */
+.section--royal .eyebrow {
+  color: var(--black);
+  opacity: 0.6;
 }
 
 /* Highlighted word in headings */
 .text-gold {
-  color: var(--color-gold);
+  color: var(--yellow);
 }
 
 /* -----------------------------------------------------------------------------
@@ -179,23 +187,27 @@ h1, h2, h3, h4, h5, h6 {
   padding-block: var(--section-pad-y);
 }
 
+/* Dark section — black background */
 .section--navy {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
 }
 
+/* Accent section — brown background, dark text */
 .section--royal {
-  background-color: var(--color-royal);
-  color: var(--color-text-light);
+  background-color: var(--brown);
+  color: var(--black);
 }
 
+/* Light section — off-white background */
 .section--light {
-  background-color: var(--color-off-white);
+  background-color: var(--offwhite);
   color: var(--color-text-dark);
 }
 
+/* White section */
 .section--white {
-  background-color: var(--color-white);
+  background-color: var(--white);
   color: var(--color-text-dark);
 }
 
@@ -218,14 +230,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
 }
 
-/* Primary: gold fill, dark text */
+/* Primary: yellow fill, black text */
 .btn--primary {
-  background-color: var(--color-gold);
-  color: var(--color-text-dark);
+  background-color: var(--yellow);
+  color: var(--black);
   box-shadow: var(--shadow-sm);
 }
 
@@ -243,12 +255,35 @@ h1, h2, h3, h4, h5, h6 {
 /* Secondary: outlined */
 .btn--secondary {
   background-color: transparent;
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
 .btn--secondary:hover {
   background-color: rgba(255 255 255 / 0.1);
+}
+
+/* Danger: red fill, white text — urgent actions only (Get Help Now, Get Naloxone) */
+.btn--danger {
+  background-color: var(--red);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--danger:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--danger:active {
+  transform: translateY(0);
+  filter: brightness(0.92);
+}
+
+.btn--danger:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
 }
 
 /* Text link with arrow */
@@ -272,50 +307,49 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .link-arrow:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 .link-arrow--light {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .link-arrow--gold {
-  color: var(--color-gold);
-  text-decoration-color: var(--color-gold);
+  color: var(--yellow);
+  text-decoration-color: var(--yellow);
 }
 
 /* -----------------------------------------------------------------------------
    7. Cards
    ----------------------------------------------------------------------------- */
 .card {
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: var(--radius-md);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
 }
 
 .card--dark {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
 }
 
 .card--gold {
-  background-color: var(--color-gold);
-  color: var(--color-text-dark);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .card--royal {
-  background-color: var(--color-royal);
-  color: var(--color-text-light);
+  background-color: var(--brown);
+  color: var(--black);
 }
 
 .card--featured {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
   box-shadow: var(--shadow-lg);
-  /* visually lift the featured card */
   transform: scale(1.02);
 }
 
@@ -323,8 +357,8 @@ h1, h2, h3, h4, h5, h6 {
 .card__tag {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
-  background-color: var(--color-gold);
-  color: var(--color-text-dark);
+  background-color: var(--yellow);
+  color: var(--black);
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -365,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-navy);
+  background-color: var(--black);
   border-bottom: 1px solid var(--color-border);
   min-height: var(--header-height);
 }
@@ -378,20 +412,45 @@ h1, h2, h3, h4, h5, h6 {
   gap: var(--space-4);
 }
 
-/* Logo / wordmark */
+/* Logo / wordmark — mark + text as one link */
 .site-logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
   text-decoration: none;
-  line-height: 1.1;
   flex-shrink: 0;
+}
+
+/* White badge behind the logo mark so the black hand is visible on the dark header */
+.site-logo__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--white);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.site-logo__badge img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.site-logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
 
 .site-logo__name {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--white);
   letter-spacing: -0.01em;
 }
 
@@ -406,7 +465,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--yellow);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.15s;
@@ -414,11 +473,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-phone:hover {
-  color: #fff;
+  color: var(--white);
 }
 
 .header-phone:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -447,12 +506,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--color-white);
-  border-bottom-color: var(--color-gold);
+  color: var(--white);
+  border-bottom-color: var(--yellow);
 }
 
 .site-nav a:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -479,7 +538,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-toggle:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 2px;
 }
 
@@ -487,7 +546,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.2s ease;
   transform-origin: center;
@@ -510,7 +569,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background-color: var(--color-navy);
+  background-color: var(--black);
   border-top: 1px solid var(--color-border);
   padding: var(--space-4) var(--space-6) var(--space-6);
 }
@@ -536,11 +595,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav a:hover,
 .mobile-nav a[aria-current="page"] {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .mobile-nav a:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -552,7 +611,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-gold) !important;
+  color: var(--yellow) !important;
   border-bottom: none !important;
 }
 
@@ -560,7 +619,7 @@ h1, h2, h3, h4, h5, h6 {
    10. Footer
    ----------------------------------------------------------------------------- */
 .site-footer {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-muted);
   padding-block: var(--space-12) var(--space-8);
   border-top: 1px solid var(--color-border);
@@ -576,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--white);
   margin-bottom: var(--space-2);
 }
 
@@ -590,13 +649,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--space-3);
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--yellow);
   font-size: var(--text-base);
   text-decoration: none;
 }
 
 .footer-brand__phone:hover {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .footer-nav h3,
@@ -604,7 +663,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--white);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: var(--space-4);
@@ -624,11 +683,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-nav a:hover {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .footer-nav a:focus-visible {
-  outline: 3px solid var(--color-gold);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -653,7 +712,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-crisis__line {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--yellow);
 }
 
 .footer-crisis__line a {
@@ -681,7 +740,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   min-height: 80vh;
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
   overflow: hidden;
   padding-block: var(--space-20) var(--space-16);
@@ -701,9 +760,9 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(11 13 58 / 0.92) 0%,
-    rgba(11 13 58 / 0.65) 60%,
-    rgba(43 34 217 / 0.35) 100%
+    rgba(17 17 17 / 0.92) 0%,
+    rgba(17 17 17 / 0.65) 60%,
+    rgba(176 132 104 / 0.25) 100%
   );
 }
 
@@ -734,7 +793,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* -----------------------------------------------------------------------------
-   12. Section: Community (royal blue)
+   12. Section: Community (brown band)
    ----------------------------------------------------------------------------- */
 .community-grid {
   display: grid;
@@ -744,39 +803,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .community-card {
-  background-color: rgba(255 255 255 / 0.1);
+  background-color: rgba(0 0 0 / 0.1);
   border-radius: var(--radius-md);
   padding: var(--space-8);
-  backdrop-filter: blur(4px);
 }
 
 .community-card__heading {
   font-size: var(--text-2xl);
-  color: var(--color-white);
+  color: var(--black);
   margin-bottom: var(--space-3);
 }
 
 .community-card__body {
   font-size: var(--text-sm);
-  color: rgba(255 255 255 / 0.8);
+  color: rgba(0 0 0 / 0.75);
   line-height: 1.7;
 }
 
 .community-right__heading {
   font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
-  color: var(--color-white);
+  color: var(--black);
   margin-bottom: var(--space-5);
 }
 
 .community-right__body {
   font-size: var(--text-lg);
-  color: rgba(255 255 255 / 0.85);
+  color: rgba(0 0 0 / 0.8);
   line-height: 1.7;
   margin-bottom: var(--space-6);
 }
 
 /* -----------------------------------------------------------------------------
-   13. Section: Pathways (light bg, three cards)
+   13. Section: Pathways (off-white bg, three cards)
    ----------------------------------------------------------------------------- */
 .pathways-intro {
   max-width: 640px;
@@ -785,7 +843,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pathways-intro__heading {
   font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
-  color: var(--color-navy);
+  color: var(--black);
   margin-bottom: var(--space-4);
 }
 
@@ -803,7 +861,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pathway-card {
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: var(--radius-md);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
@@ -814,7 +872,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pathway-card__heading {
   font-size: var(--text-xl);
-  color: var(--color-navy);
+  color: var(--black);
 }
 
 .pathway-card__body {
@@ -825,13 +883,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pathway-card--featured {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
   box-shadow: var(--shadow-lg);
 }
 
 .pathway-card--featured .pathway-card__heading {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .pathway-card--featured .pathway-card__body {
@@ -842,7 +900,7 @@ h1, h2, h3, h4, h5, h6 {
    14. Section: CTA
    ----------------------------------------------------------------------------- */
 .cta-section {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   padding-block: var(--space-20);
 }
 
@@ -854,10 +912,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-card {
-  background-color: var(--color-gold);
+  background-color: var(--yellow);
   border-radius: var(--radius-lg);
   padding: var(--space-10);
-  color: var(--color-text-dark);
+  color: var(--black);
 }
 
 .cta-card .eyebrow {
@@ -866,7 +924,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-card__heading {
   font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
-  color: var(--color-text-dark);
+  color: var(--black);
   margin-bottom: var(--space-4);
 }
 
@@ -877,13 +935,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-6);
 }
 
+/* Button inside the yellow CTA card — use black fill so it stands out */
 .cta-card .btn--primary {
-  background-color: var(--color-navy);
-  color: var(--color-white);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .cta-card .btn--primary:hover {
-  background-color: #14185a;
+  filter: brightness(1.15);
 }
 
 .cta-disclaimer {
@@ -963,7 +1022,7 @@ h1, h2, h3, h4, h5, h6 {
    16. Page hero (interior pages — smaller than home hero)
    ============================================================================= */
 .page-hero {
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
   padding-block: var(--space-16) var(--space-12);
   position: relative;
@@ -974,7 +1033,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(43 34 217 / 0.18) 0%, transparent 70%);
+  background: linear-gradient(135deg, rgba(176 132 104 / 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1009,24 +1068,30 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
   margin-top: var(--space-10);
   margin-bottom: var(--space-4);
-  color: var(--color-navy);
+  color: var(--black);
 }
 
-.section--navy .prose h2,
+.section--navy .prose h2 {
+  color: var(--white);
+}
+
 .section--royal .prose h2 {
-  color: var(--color-white);
+  color: var(--black);
 }
 
 .prose h3 {
   font-size: var(--text-xl);
   margin-top: var(--space-8);
   margin-bottom: var(--space-3);
-  color: var(--color-navy);
+  color: var(--black);
 }
 
-.section--navy .prose h3,
+.section--navy .prose h3 {
+  color: var(--white);
+}
+
 .section--royal .prose h3 {
-  color: var(--color-white);
+  color: var(--black);
 }
 
 .prose p {
@@ -1034,9 +1099,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #444;
 }
 
-.section--navy .prose p,
-.section--royal .prose p {
+.section--navy .prose p {
   color: var(--color-text-muted);
+}
+
+.section--royal .prose p {
+  color: rgba(0 0 0 / 0.8);
 }
 
 .prose ul,
@@ -1056,9 +1124,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-.section--navy .prose li,
-.section--royal .prose li {
+.section--navy .prose li {
   color: var(--color-text-muted);
+}
+
+.section--royal .prose li {
+  color: rgba(0 0 0 / 0.8);
 }
 
 /* Two-col layout for content + aside */
@@ -1077,15 +1148,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Info box / aside card */
 .info-box {
-  background-color: var(--color-off-white);
-  border-left: 4px solid var(--color-gold);
+  background-color: var(--offwhite);
+  border-left: 4px solid var(--yellow);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: var(--space-6) var(--space-8);
 }
 
 .info-box--dark {
   background-color: rgba(255 255 255 / 0.06);
-  border-left-color: var(--color-gold);
+  border-left-color: var(--yellow);
 }
 
 .info-box__heading {
@@ -1094,12 +1165,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-navy);
+  color: var(--black);
   margin-bottom: var(--space-3);
 }
 
 .info-box--dark .info-box__heading {
-  color: var(--color-gold);
+  color: var(--yellow);
 }
 
 /* Timeline (About page) */
@@ -1115,7 +1186,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 6px;
   bottom: 6px;
   width: 2px;
-  background-color: var(--color-gold);
+  background-color: var(--yellow);
   opacity: 0.4;
 }
 
@@ -1132,15 +1203,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--color-gold);
-  border: 2px solid var(--color-navy);
+  background-color: var(--yellow);
+  border: 2px solid var(--offwhite);
 }
 
 .timeline__year {
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--brown-dark);
   letter-spacing: 0.06em;
   margin-bottom: var(--space-1);
 }
@@ -1172,7 +1243,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card {
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: var(--radius-md);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
@@ -1191,7 +1262,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--black);
 }
 
 .service-card__body {
@@ -1218,7 +1289,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--black);
 }
 
 .form-group input,
@@ -1229,7 +1300,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-3) var(--space-4);
   border: 2px solid #ccc;
   border-radius: var(--radius-sm);
-  background-color: var(--color-white);
+  background-color: var(--white);
   color: var(--color-text-dark);
   transition: border-color 0.15s;
   width: 100%;
@@ -1239,8 +1310,8 @@ h1, h2, h3, h4, h5, h6 {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-royal);
-  box-shadow: 0 0 0 3px rgba(43 34 217 / 0.15);
+  border-color: var(--brown);
+  box-shadow: 0 0 0 3px rgba(176 132 104 / 0.2);
 }
 
 .form-group textarea {
@@ -1253,7 +1324,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 60vh;
   display: flex;
   align-items: center;
-  background-color: var(--color-navy);
+  background-color: var(--black);
   color: var(--color-text-light);
   padding-block: var(--space-24);
   text-align: center;
@@ -1263,7 +1334,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: clamp(4rem, 15vw, 8rem);
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--yellow);
   line-height: 1;
   margin-bottom: var(--space-4);
 }
