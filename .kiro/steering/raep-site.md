@@ -37,17 +37,18 @@ should carry over from that draft, cleaned up.
 ```
 index.html
 about.html
-services.html            (overview only — short card per program, linking out)
-peer-support.html
-punto-de-partida.html    (drop-in center, outreach, overdose prevention / naloxone hub)
+services.html            (Programs overview — short card per program, linking out)
+punto-de-partida.html    (Punto de Partida, home of Proyecto Centro Salvavida: drop-in, outreach)
+reentry.html             (re-entry program)
+dwi-program.html         (DWI program)
+naloxone.html            (Region 10 Naloxone Distribution Hub)
+peer-support.html        (Peer Support: How We Work — RAEP's approach across all programs)
 casa-vida.html           (residential recovery home)
 alas-nuevas.html         (women's residential program)
-reentry.html             (re-entry program)
-dwi-program.html         (TODO: confirm with leadership whether this gets its own page)
 contact.html
 404.html
 assets/css/styles.css
-assets/js/main.js        (mobile menu toggle only)
+assets/js/main.js        (mobile menu + nav dropdowns/accordions)
 assets/img/
 CNAME                    (added later, once the domain is sorted out)
 ```
@@ -64,12 +65,36 @@ CNAME                    (added later, once the domain is sorted out)
 - Primary button: gold fill, dark text. Secondary: underlined text link with arrow.
 
 ## Navigation
-Logo/wordmark "Recovery Alliance" (links home) · About · Services · Peer Support ·
-Punto de Partida · Contact
-- Programs (Casa Vida, Alas Nuevas, Re-entry, DWI) are reached from Services.
+Logo/wordmark "Recovery Alliance" (links home) · Home · About · Programs ▾ · Residential ▾ · Contact
+- Programs dropdown:
+  - Programs overview → services.html
+  - Punto de Partida — Proyecto Centro Salvavida → punto-de-partida.html
+  - Re-entry → reentry.html
+  - DWI Program → dwi-program.html
+  - Naloxone Distribution Hub → naloxone.html
+  - Peer Support: How We Work → peer-support.html
+- Residential dropdown:
+  - Casa Vida → casa-vida.html
+  - Alas Nuevas → alas-nuevas.html
+- There is no "Services" item in the header anymore; services.html is "Programs overview".
+- Dropdowns are `<button class="nav-disclosure" aria-expanded aria-controls>` followed by a
+  `<ul>` — click/tap or Enter/Space to open, Escape or outside click to close. Not hover-only.
+  In the mobile drawer the same pattern works as an accordion.
+- Current page: put `aria-current="page"` on its link (desktop and mobile). main.js
+  highlights the parent dropdown button automatically.
+- The header markup is identical on every page except where `aria-current` sits.
 - Tap-to-call phone link in the header: (915) 594-7000 → `tel:+19155947000`
 - Do NOT include the heart icon or "Log In" from the SiteGround template (store leftovers).
 - Mobile: hamburger menu that actually works (broken hamburger nav was a problem on the old site).
+
+## Naming decisions (approved)
+- Punto de Partida = the building/center name the public uses.
+- Proyecto Centro Salvavida = the Comprehensive Opioid Recovery Center housed there;
+  shown as the program name.
+- Funding details stay off the site except a required funder acknowledgment.
+- Peer support is RAEP's approach across all programs, not a single program.
+- Page hero on punto-de-partida.html: H1 "Punto de Partida", subheading "Home of Proyecto
+  Centro Salvavida, El Paso's Comprehensive Opioid Recovery Center."
 
 ## Language
 - Person-first, stigma-free: "people in recovery," "substance use disorder," not "addicts"
@@ -199,13 +224,25 @@ Multiple pathways · How to get in.
 - Drop-in amenities: showers, bathrooms, laundry, clothing closet, respite area, food.
 - Street outreach team (unhoused neighbors and encampments).
 - Overdose prevention; Region 10 naloxone distribution hub; free Narcan.
-- TODO: address, hours, confirm what to call it publicly (Punto de Partida vs.
-  Proyecto Centro Salvavida).
+- Public name settled — see "Naming decisions" above.
+- TODO: address, hours.
+- TODO: required funder acknowledgment for Proyecto Centro Salvavida (wording from funder).
 
 ### services.html
 Overview only: one short card per program linking to its page — peer coaching,
 recovery groups, Punto de Partida, Casa Vida, Alas Nuevas, Re-entry, DWI program,
 linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
+
+## Open items
+- Contact info: address, phone, email, hours, socials
+- Original images + logo files
+- Who accredited RAEP as an RCO
+- Who's in the CTA photo / consent
+- Domain: which one, and who controls it
+- Director sign-off on moving off SiteGround
+- Original grant name + year (Punto de Partida / Salvavida history)
+- Year RAEP moved into Punto de Partida, and year Proyecto Centro Salvavida started
+- Proyecto Centro Salvavida funder + exact acknowledgment wording required on the site
 
 ## Later (not now)
 - Spanish version of every page

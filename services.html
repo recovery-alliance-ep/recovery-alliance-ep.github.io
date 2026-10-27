@@ -41,12 +41,31 @@
         </span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <ul role="list">
+        <ul class="site-nav__list" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html" aria-current="page">Services</a></li>
-          <li><a href="peer-support.html">Peer Support</a></li>
-          <li><a href="punto-de-partida.html">Punto de Partida</a></li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-disclosure nav-dropdown__toggle" aria-expanded="false" aria-controls="nav-programs">
+              Programs<span class="nav-chevron" aria-hidden="true"></span>
+            </button>
+            <ul id="nav-programs" class="nav-dropdown__menu" role="list">
+              <li><a href="services.html" aria-current="page">Programs overview</a></li>
+              <li><a href="punto-de-partida.html">Punto de Partida — Proyecto Centro Salvavida</a></li>
+              <li><a href="reentry.html">Re-entry</a></li>
+              <li><a href="dwi-program.html">DWI Program</a></li>
+              <li><a href="naloxone.html">Naloxone Distribution Hub</a></li>
+              <li><a href="peer-support.html">Peer Support: How We Work</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <button type="button" class="nav-disclosure nav-dropdown__toggle" aria-expanded="false" aria-controls="nav-residential">
+              Residential<span class="nav-chevron" aria-hidden="true"></span>
+            </button>
+            <ul id="nav-residential" class="nav-dropdown__menu" role="list">
+              <li><a href="casa-vida.html">Casa Vida</a></li>
+              <li><a href="alas-nuevas.html">Alas Nuevas</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -58,12 +77,33 @@
       </button>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" aria-current="page">Services</a>
-      <a href="peer-support.html">Peer Support</a>
-      <a href="punto-de-partida.html">Punto de Partida</a>
-      <a href="contact.html">Contact</a>
+      <ul class="mobile-nav__list" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-nav__group">
+          <button type="button" class="nav-disclosure mobile-nav__toggle" aria-expanded="false" aria-controls="mnav-programs">
+            Programs<span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul id="mnav-programs" class="mobile-nav__submenu" role="list">
+            <li><a href="services.html" aria-current="page">Programs overview</a></li>
+            <li><a href="punto-de-partida.html">Punto de Partida — Proyecto Centro Salvavida</a></li>
+            <li><a href="reentry.html">Re-entry</a></li>
+            <li><a href="dwi-program.html">DWI Program</a></li>
+            <li><a href="naloxone.html">Naloxone Distribution Hub</a></li>
+            <li><a href="peer-support.html">Peer Support: How We Work</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__group">
+          <button type="button" class="nav-disclosure mobile-nav__toggle" aria-expanded="false" aria-controls="mnav-residential">
+            Residential<span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul id="mnav-residential" class="mobile-nav__submenu" role="list">
+            <li><a href="casa-vida.html">Casa Vida</a></li>
+            <li><a href="alas-nuevas.html">Alas Nuevas</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <a href="tel:+19155947000" class="mobile-nav__phone" aria-label="Call Recovery Alliance at (915) 594-7000">☎ (915) 594-7000</a>
     </nav>
   </header>
