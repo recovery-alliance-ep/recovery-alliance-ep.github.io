@@ -1514,3 +1514,64 @@ h1, h2, h3, h4, h5, h6 {
 .section--royal h2, .section--royal h3, .section--royal p, .section--royal li,
 .card--royal, .community-right__heading, .community-right__body,
 .community-card__heading, .community-card__body { color: var(--black); opacity: 1; }
+/* -----------------------------------------------------------------------------
+   Community partners (text cards; logos only with partner permission)
+   ----------------------------------------------------------------------------- */
+.partners__heading {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  margin-bottom: var(--space-4);
+}
+
+.partners__intro {
+  max-width: 60ch;
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.partners__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .partners__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .partners__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.partner-card {
+  background: var(--white);
+  border-left: 4px solid var(--yellow);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.partner-card__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  color: var(--black);
+}
+
+.partner-card__desc {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: #444;
+  line-height: 1.7;
+}
+
+.partners__funding {
+  margin-top: var(--space-8);
+  font-size: var(--text-sm);
+  color: #444;
+}
+
+.partners__group {
+  font-size: var(--text-lg);
+  margin: var(--space-8) 0 var(--space-4);
+}
