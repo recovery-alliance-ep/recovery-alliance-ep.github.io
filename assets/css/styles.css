@@ -165,7 +165,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Eyebrow on brown section background */
 .section--royal .eyebrow {
   color: var(--black);
-  opacity: 0.6;
 }
 
 /* Highlighted word in headings */
@@ -962,7 +961,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .community-card__body {
   font-size: var(--text-sm);
-  color: rgba(0 0 0 / 0.75);
+  color: var(--black);
   line-height: 1.7;
 }
 
@@ -974,7 +973,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .community-right__body {
   font-size: var(--text-lg);
-  color: rgba(0 0 0 / 0.8);
+  color: var(--black);
   line-height: 1.7;
   margin-bottom: var(--space-6);
 }
@@ -1065,7 +1064,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-card .eyebrow {
-  color: rgba(0 0 0 / 0.5);
+  color: var(--black);
 }
 
 .cta-card__heading {
@@ -1076,7 +1075,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-card__body {
   font-size: var(--text-lg);
-  color: rgba(0 0 0 / 0.75);
+  color: var(--black);
   line-height: 1.7;
   margin-bottom: var(--space-6);
 }
@@ -1260,7 +1259,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section--royal .prose p {
-  color: rgba(0 0 0 / 0.8);
+  color: var(--black);
 }
 
 .prose ul,
@@ -1285,7 +1284,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section--royal .prose li {
-  color: rgba(0 0 0 / 0.8);
+  color: var(--black);
 }
 
 /* Two-col layout for content + aside */
@@ -1509,11 +1508,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* Text on brown is always solid black (contrast) */
-.section--royal .eyebrow { color: var(--black); opacity: 1; }
-.section--royal h2, .section--royal h3, .section--royal p, .section--royal li,
-.card--royal, .community-right__heading, .community-right__body,
-.community-card__heading, .community-card__body { color: var(--black); opacity: 1; }
 /* -----------------------------------------------------------------------------
    Community partners (text cards; logos only with partner permission)
    ----------------------------------------------------------------------------- */
