@@ -1569,3 +1569,76 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--text-lg);
   margin: var(--space-8) 0 var(--space-4);
 }
+
+/* -----------------------------------------------------------------------------
+   Schedule table (punto-de-partida.html weekly schedule)
+   ----------------------------------------------------------------------------- */
+.schedule-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: var(--space-6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 540px;       /* prevents columns from collapsing below readable width */
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  background: var(--white);
+}
+
+.schedule-table caption {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--black);
+  text-align: left;
+  padding: var(--space-3) var(--space-4) var(--space-2);
+  caption-side: top;
+}
+
+.schedule-table thead th {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.schedule-table th[scope="row"] {
+  background-color: var(--offwhite);
+  font-weight: 600;
+  color: var(--black);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.schedule-table td {
+  padding: var(--space-3) var(--space-4);
+  color: #444;
+  vertical-align: top;
+  border-top: 1px solid #e5e5e5;
+}
+
+.schedule-table tbody tr:hover td,
+.schedule-table tbody tr:hover th[scope="row"] {
+  background-color: #f5f0eb;
+}
+
+/* On very small viewports, allow horizontal scroll — don't stack awkwardly */
+@media (max-width: 319px) {
+  .schedule-table {
+    min-width: 320px;
+    font-size: var(--text-xs);
+  }
+}
