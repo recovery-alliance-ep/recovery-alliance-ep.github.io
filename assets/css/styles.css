@@ -1642,3 +1642,106 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--text-xs);
   }
 }
+
+/* =============================================================================
+   18. Hero two-column split (program logo heroes)
+   ============================================================================= */
+
+/* Base: single column (mobile first) */
+.hero-split {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Desktop: text left, logo right (320 px fixed column) */
+@media (min-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr 320px;
+  }
+
+  /* Widen the container on hero pages so the two-column layout isn't cramped */
+  .page-hero .container {
+    max-width: var(--max-width);
+  }
+}
+
+/* Phone: logo floats above the text */
+@media (max-width: 899px) {
+  .hero-split__logo {
+    order: -1;
+  }
+}
+
+/* Logo images never stretch */
+.hero-split__logo img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ------------------------------------------------------------------
+   Punto de Partida: white card holding salvavida + punto logos
+   ------------------------------------------------------------------ */
+.logo-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-card img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+}
+
+@media (max-width: 899px) {
+  .logo-card {
+    flex-direction: row;
+    padding: .75rem;
+  }
+
+  .logo-card img {
+    max-width: 140px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Alas Nuevas: round-cropped portrait photo
+   ------------------------------------------------------------------ */
+.hero-logo--round {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-inline: auto;
+}
+
+@media (max-width: 899px) {
+  .hero-logo--round {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Naloxone hub: plain logo, no card, constrained width
+   ------------------------------------------------------------------ */
+.hero-logo--naloxone {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+
+@media (max-width: 899px) {
+  .hero-logo--naloxone {
+    max-width: 200px;
+  }
+}
