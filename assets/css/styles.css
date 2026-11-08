@@ -132,6 +132,19 @@ button {
   top: var(--space-4);
 }
 
+/* Visually hidden — accessible to screen readers, invisible on screen */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* -----------------------------------------------------------------------------
    4. Typography helpers
    ----------------------------------------------------------------------------- */
@@ -1509,7 +1522,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* -----------------------------------------------------------------------------
-   Community partners (text cards; logos only with partner permission)
+   Community partners
    ----------------------------------------------------------------------------- */
 .partners__heading {
   font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
@@ -1543,6 +1556,31 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-md);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-card__logo-slot {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.partner-card__logo-slot--dark {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: .5rem .75rem;
+  width: fit-content;
+}
+
+.partner-card__logo {
+  max-height: 72px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .partner-card__name {
@@ -1552,7 +1590,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--black);
 }
 
-.partner-card__desc {
+.partner-card__desc,
+.partner-card__detail {
   margin-top: var(--space-2);
   font-size: var(--text-sm);
   color: #444;
