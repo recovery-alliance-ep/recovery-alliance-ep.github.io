@@ -117,10 +117,14 @@ Logo/wordmark "Recovery Alliance" (links home) · Home · About · Programs ▾ 
 - Link: Learn what peer support means → peer-support.html
 
 ### Community section (royal blue band)
-- Left card: eyebrow "ACCREDITED RCO" — TODO: confirm who accredited RAEP before publishing
+- Left card: eyebrow "ACCREDITED RCO" — accredited by the Council on Accreditation of
+  Peer Recovery Support Services (CAPRSS). ✓ confirmed Nov 7, 2026.
   - Heading: Experience, Strength and Hope.
-  - Small text: TODO: rewrite — draft says "Peer lived experience transforming vulnerability
-    into collective resilience across El Paso and West Texas." (too jargony)
+  - Accreditation line: "Accredited by the Council on Accreditation of Peer Recovery
+    Support Services (CAPRSS)." (already live on index.html)
+  - Small text: TODO: rewrite body copy — the SiteGround draft had "Peer lived experience
+    transforming vulnerability into collective resilience across El Paso and West Texas."
+    (flagged as too jargony). Replace with approved plain-language copy from leadership.
   - Draft has a quote icon but no quote — either add a real, consented quote with
     attribution or remove the icon.
 - Right: H2 Recovery grows in community.
@@ -143,8 +147,11 @@ Logo/wordmark "Recovery Alliance" (links home) · Home · About · Programs ▾ 
   2. (Featured, dark card) Tag LIFE-BUILDING PATH / "Holistic Stability" — "Recovery support
      services" — Residential, justice-involved, and life-building support that helps turn
      next steps into a path forward. Button → services.html (TODO: button label cut off)
-  3. Eyebrow HARM REDUCTION & OUTREACH — "Punto de Partida" — A low-barrier opioid drop-in
+  3. Eyebrow HARM REDUCTION & OUTREACH — "Punto de Partida" — A low-barrier drop-in
      center, street outreach team, and Region 10 naloxone resource hub.
+     (The drop-in serves people with ANY substance use — do NOT describe it as an
+     "opioid drop-in center." The grant program name "Comprehensive Opioid Recovery
+     Center" stays as is.) ✓ confirmed Nov 7, 2026.
      Link: Visit Punto de Partida → punto-de-partida.html
 - TODO: confirm nothing else sits between this section and the CTA.
 
@@ -163,8 +170,8 @@ Logo/wordmark "Recovery Alliance" (links home) · Home · About · Programs ▾ 
 - Recovery Alliance of El Paso · nav links
 - Phone: (915) 594-7000
 - TODO: address, email, hours, social links (Facebook page exists — TODO: get URL)
-- © 2026 Recovery Alliance of El Paso (El Paso Alliance Inc.)
-- Remove "Powered by SiteGround Website Builder."
+- © 2026 Recovery Alliance of El Paso (El Paso Alliance Inc.) · Website by Andres Chavez
+  (approved Nov 7, 2026 — do not change without direction)
 - Crisis line: 988
 
 ## About page (source: old site + Facebook — rewrite, don't copy)
@@ -172,7 +179,7 @@ Logo/wordmark "Recovery Alliance" (links home) · Home · About · Programs ▾ 
   nonjudgmental space where individuals, families and communities affected by substance
   and alcohol use disorder can find immediate help, pathways to healing, and hope, guided
   by people who have been there before.
-- Vision: A community where long-term recovery thrives.
+- Vision: A community where long-term recovery thrives. ✓ confirmed Nov 7, 2026.
 - History timeline (facts from the old site):
   - 1998: El Paso Alliance founded by people in recovery, families and allies to open a
     public dialogue about addiction, treatment and recovery, and fight stigma.
@@ -233,11 +240,25 @@ Overview only: one short card per program linking to its page — peer coaching,
 recovery groups, Punto de Partida, Casa Vida, Alas Nuevas, Re-entry, DWI program,
 linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 
+## Approved decisions (as of Nov 7, 2026)
+- Accreditation: Council on Accreditation of Peer Recovery Support Services (CAPRSS).
+  State on Home and About pages. Already live.
+- Vision statement: "A community where long-term recovery thrives." Already live on about.html.
+- Footer copyright: "© 2026 Recovery Alliance of El Paso (El Paso Alliance Inc.) · Website
+  by Andres Chavez" — approved, do not change without direction.
+- Drop-in center language: Punto de Partida serves people with ANY substance use.
+  Never call it an "opioid drop-in center." The grant program name "Comprehensive Opioid
+  Recovery Center" (Proyecto Centro Salvavida) is correct and stays unchanged.
+- Fentanyl test strips: NOT distributed (not legal in Texas as of Nov 2026). Do not mention
+  them on the site. Revisit if state law changes.
+- Images already published on the old live site may be reused without additional consent.
+  New photos of people still need documented consent before publishing.
+
 ## Open items
-- Contact info: address, phone, email, hours, socials
-- Original images + logo files
-- Who accredited RAEP as an RCO
-- Who's in the CTA photo / consent
+- Contact info: email, hours, social links (Facebook page exists — TODO: get URL)
+- Original logo files (RAEP, Punto de Partida, Salvavida, Naloxone Hub) — still needed
+  in high resolution; image reuse policy covers photos already on the old site, not source files
+- Who's in the CTA photo / consent (note: old-site photos may be reused; new photos need documented consent)
 - Domain: which one, and who controls it
 - Director sign-off on moving off SiteGround
 - Original grant name + year (Punto de Partida / Salvavida history)
