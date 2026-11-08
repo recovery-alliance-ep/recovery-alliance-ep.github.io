@@ -1739,6 +1739,11 @@ h1, h2, h3, h4, h5, h6 {
   .hero-split__logo {
     order: -1;
   }
+
+  /* Home hero: logo comes after the text, not before */
+  .hero .hero-split__logo {
+    order: 0;
+  }
 }
 
 /* Logo images never stretch */
@@ -1819,8 +1824,13 @@ h1, h2, h3, h4, h5, h6 {
    ------------------------------------------------------------------ */
 .logo-card__link {
   display: block;
+  width: 100%;
   border-radius: 8px;
   outline-offset: 3px;
+}
+
+.logo-card__link img {
+  margin-inline: auto;
 }
 
 .logo-card__link:focus-visible {
