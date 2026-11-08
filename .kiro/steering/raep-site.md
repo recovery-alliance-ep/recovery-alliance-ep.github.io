@@ -39,6 +39,7 @@ index.html
 about.html
 services.html            (Programs overview — short card per program, linking out)
 punto-de-partida.html    (Punto de Partida, home of Proyecto Centro Salvavida: drop-in, outreach)
+partners.html            (Partners & Funders — logo cards for community partners and funders)
 reentry.html             (re-entry program)
 dwi-program.html         (DWI program)
 naloxone.html            (Region 10 Naloxone Distribution Hub)
@@ -77,6 +78,8 @@ Logo/wordmark "Recovery Alliance" (links home) · Home · About · Programs ▾ 
   - Casa Vida → casa-vida.html
   - Alas Nuevas → alas-nuevas.html
 - There is no "Services" item in the header anymore; services.html is "Programs overview".
+- partners.html is linked from the footer and from the Community partners section on
+  punto-de-partida.html. It is not in the primary nav.
 - Dropdowns are `<button class="nav-disclosure" aria-expanded aria-controls>` followed by a
   `<ul>` — click/tap or Enter/Space to open, Escape or outside click to close. Not hover-only.
   In the mobile drawer the same pattern works as an accordion.
@@ -258,6 +261,9 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 - Contact info: email, hours, social links (Facebook page exists — TODO: get URL)
 - Original logo files (RAEP, Punto de Partida, Salvavida, Naloxone Hub) — still needed
   in high resolution; image reuse policy covers photos already on the old site, not source files
+- Written OK from each partner/funder for logos now live on partners.html
+  (11 logos incl. El Paso County seal, SAMHSA, Be Well Texas). Director to
+  decide: keep logos up while permissions come in, or names only until then.
 - Who's in the CTA photo / consent (note: old-site photos may be reused; new photos need documented consent)
 - Domain: which one, and who controls it
 - Director sign-off on moving off SiteGround

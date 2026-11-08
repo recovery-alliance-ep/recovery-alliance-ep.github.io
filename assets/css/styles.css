@@ -1308,6 +1308,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: start;
 }
 
+/* Let grid children shrink so wide tables scroll inside their wrapper on phones */
+.content-aside > * {
+  min-width: 0;
+}
+
 @media (min-width: 1024px) {
   .content-aside {
     grid-template-columns: 1fr 380px;
@@ -1485,6 +1490,12 @@ h1, h2, h3, h4, h5, h6 {
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+.form-hint {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: #555;
 }
 
 /* 404 page */
