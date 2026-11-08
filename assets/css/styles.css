@@ -950,6 +950,24 @@ h1, h2, h3, h4, h5, h6 {
   gap: var(--space-6);
 }
 
+/* Home hero: two-column layout using hero-split inside .hero (full-viewport) */
+.hero .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .hero .hero-split {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+/* Hero content stays full-width within its grid cell */
+.hero .hero__content {
+  max-width: 100%;
+}
+
 /* -----------------------------------------------------------------------------
    12. Section: Community (brown band)
    ----------------------------------------------------------------------------- */
@@ -1793,5 +1811,46 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 899px) {
   .hero-logo--naloxone {
     max-width: 200px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Shared: focus outline for logo card links
+   ------------------------------------------------------------------ */
+.logo-card__link {
+  display: block;
+  border-radius: 8px;
+  outline-offset: 3px;
+}
+
+.logo-card__link:focus-visible {
+  outline: 3px solid var(--yellow);
+}
+
+/* ------------------------------------------------------------------
+   Home hero logo: Punto de Partida wordmark (wide aspect ratio)
+   Desktop max 360 px, phones max 240 px
+   ------------------------------------------------------------------ */
+.logo-card__link--home img {
+  max-width: 360px;
+}
+
+@media (max-width: 899px) {
+  .logo-card__link--home img {
+    max-width: 240px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   About hero logo: Salvavida mark (squarish aspect ratio)
+   Desktop max 280 px, phones max 180 px
+   ------------------------------------------------------------------ */
+.logo-card__link--about img {
+  max-width: 280px;
+}
+
+@media (max-width: 899px) {
+  .logo-card__link--about img {
+    max-width: 180px;
   }
 }
