@@ -316,8 +316,20 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
   (name, legal name, address, main phone only).
 - Contrast fixes: text on the brown band is black; Services page call-to-action text is white.
 
+## Naloxone vending machine map (added Nov 9, 2026)
+- Lives on naloxone.html, section `#vending-machines` (not a separate page).
+- Each machine is one `<li class="machine" data-lat data-lng>` card: address + "Get directions".
+  Instructions for adding a machine are in the HTML comment above the section.
+- The map (Leaflet, stored in assets/vendor/leaflet/) loads only when "Show the map" is
+  pressed; map pictures come from OpenStreetMap. privacy.html explains this — keep them in sync.
+- Machines so far: 800 Montana Ave 79902 and 3501 Hueco Ave 79903.
+  TODO: pin positions are approximate; replace with exact numbers from Google Maps.
+  TODO: about 6 machines in the city (unconfirmed) — get the other addresses.
+  TODO (leadership): free or not, hours/access, site names. Do not state these until confirmed.
+- Rows with no confirmed answer on naloxone.html (ID required, training at pickup, Region 10
+  counties, how organizations request) are hidden as HTML comments until confirmed.
+
 ## To do next
 - Spanish version: plan is an `/es/` folder with a copy of each page and an EN | ES switch in
   the header. Do after English copy is approved. Needs a fluent staff reviewer.
 - "Get Help Now" header button and grouped Programs menu (ideas saved Nov 7).
-- Naloxone vending machine map (needs confirmed machine locations).

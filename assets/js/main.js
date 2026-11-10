@@ -4,6 +4,7 @@
  * 2. Nav dropdowns (desktop) and accordions (mobile drawer)
  * 3. Contact form guard (until the form is connected)
  * 4. Curtain drop for the weekly schedule
+ * 5. Naloxone vending machine map (loads only when "Show the map" is pressed)
  *
  * Every dropdown/accordion is a <button class="nav-disclosure" aria-expanded aria-controls>
  * followed by a <ul>. The CSS shows/hides the <ul> based on aria-expanded, so this
@@ -207,6 +208,89 @@
           observer.observe(el);
         });
       });
+    });
+  }
+
+  /* ---------------------------------------------------------------------------
+     Naloxone vending machine map (naloxone.html)
+     Reads every <li class="machine" data-lat data-lng> on the page and puts a pin
+     on a map for each one. Nothing is downloaded until the button is pressed:
+     the map code (Leaflet) is stored on this site in assets/vendor/leaflet/, and
+     the map pictures come from OpenStreetMap.
+     --------------------------------------------------------------------------- */
+  var mapButton = document.getElementById('machine-map-button');
+  var mapBox = document.getElementById('machine-map');
+
+  if (mapButton && mapBox) {
+    var mapLoaded = false;
+
+    var buildMap = function () {
+      var L = window.L;
+      var map = L.map(mapBox, { scrollWheelZoom: false });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var icon = L.divIcon({ className: '', html: '<div class="machine-pin"></div>', iconSize: [26, 26], iconAnchor: [13, 26], popupAnchor: [0, -26] });
+      var points = [];
+
+      document.querySelectorAll('.machine[data-lat][data-lng]').forEach(function (item) {
+        var lat = parseFloat(item.getAttribute('data-lat'));
+        var lng = parseFloat(item.getAttribute('data-lng'));
+        if (isNaN(lat) || isNaN(lng)) return;
+
+        var name = item.querySelector('.machine__name');
+        var address = item.querySelector('.machine__address');
+        var link = item.querySelector('a[href]');
+
+        var popup = document.createElement('div');
+        var title = document.createElement('strong');
+        title.textContent = name ? name.textContent : 'Naloxone vending machine';
+        popup.appendChild(title);
+        if (address) popup.appendChild(document.createTextNode(address.textContent));
+        if (link) {
+          var a = document.createElement('a');
+          a.href = link.href;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.textContent = 'Get directions';
+          popup.appendChild(document.createElement('br'));
+          popup.appendChild(a);
+        }
+
+        L.marker([lat, lng], { icon: icon, title: title.textContent, alt: 'Naloxone vending machine: ' + title.textContent })
+          .addTo(map).bindPopup(popup);
+        points.push([lat, lng]);
+      });
+
+      if (points.length) {
+        map.fitBounds(points, { padding: [50, 50], maxZoom: 15 });
+      } else {
+        map.setView([31.7619, -106.4850], 12);   // central El Paso
+      }
+    };
+
+    mapButton.addEventListener('click', function () {
+      var open = mapBox.hidden;
+      mapBox.hidden = !open;
+      mapButton.setAttribute('aria-expanded', String(open));
+      mapButton.textContent = open ? 'Hide the map' : 'Show the map';
+      if (!open || mapLoaded) return;
+      mapLoaded = true;
+
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'assets/vendor/leaflet/leaflet.css';
+      document.head.appendChild(css);
+
+      var js = document.createElement('script');
+      js.src = 'assets/vendor/leaflet/leaflet.js';
+      js.onload = buildMap;
+      js.onerror = function () {
+        mapBox.textContent = 'The map could not load. The locations are listed above.';
+      };
+      document.head.appendChild(js);
     });
   }
 })();

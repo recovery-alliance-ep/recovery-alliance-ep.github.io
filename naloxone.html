@@ -140,6 +140,9 @@
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:var(--space-6);">
               <a href="#get-naloxone" class="btn btn--danger">Get naloxone today</a>
+              <a href="#vending-machines" class="link-arrow link-arrow--light">
+                Find a vending machine
+              </a>
               <a href="#organizations" class="link-arrow link-arrow--light">
                 Request naloxone for your organization
               </a>
@@ -170,7 +173,9 @@
           <dl style="margin-top:var(--space-6);display:grid;grid-template-columns:max-content 1fr;gap:var(--space-2) var(--space-6);font-size:var(--text-base);">
             <dt style="font-weight:700;color:var(--black);">Where</dt>
             <dd style="color:#444;">
-              <!-- TODO: Add confirmed address for Punto de Partida. -->
+              Punto de Partida<br />
+              800 Montana Ave, El Paso, TX 79902<br />
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=800+Montana+Ave+El+Paso+TX+79902" target="_blank" rel="noopener">Get directions<span class="visually-hidden"> (opens in a new tab)</span></a>
             </dd>
 
             <dt style="font-weight:700;color:var(--black);">Hours</dt>
@@ -182,21 +187,13 @@
             <dt style="font-weight:700;color:var(--black);">Cost</dt>
             <dd style="color:#444;">Free</dd>
 
-            <dt style="font-weight:700;color:var(--black);">ID required</dt>
-            <dd style="color:#444;">
-              <!-- TODO: Confirm whether ID is required — yes or no. -->
-            </dd>
+            <!-- ROW HIDDEN until confirmed. Label: "ID required". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: Confirm whether ID is required — yes or no. -->
 
-            <dt style="font-weight:700;color:var(--black);">Training at pickup</dt>
-            <dd style="color:#444;">
-              <!-- TODO: Confirm whether brief overdose-response training is offered at pickup. -->
-            </dd>
+            <!-- ROW HIDDEN until confirmed. Label: "Training at pickup". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: Confirm whether brief overdose-response training is offered at pickup. -->
           </dl>
 
-          <p style="margin-top:var(--space-6);">
-            <!-- TODO: Add confirmed Google Maps link for Punto de Partida address. -->
-            <!-- <a href="TODO-MAPS-LINK" class="link-arrow" style="color:var(--brown-dark);">Get directions</a> -->
-          </p>
         </div>
 
         <!-- Aside -->
@@ -206,7 +203,7 @@
             <p style="font-size:var(--text-sm);color:#555;line-height:1.8;">
               Recovery Alliance of El Paso<br />
               Region 10 naloxone resource hub<br />
-              <!-- TODO: Add confirmed address. -->
+              800 Montana Ave, El Paso, TX 79902<br />
               Mon–Fri 8:00 a.m.–4:00 p.m.<br />
               <a href="tel:+19153009521">(915) 300-9521</a>
             </p>
@@ -222,6 +219,81 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+
+    <!-- NALOXONE VENDING MACHINES
+         ======================================================================
+         HOW TO ADD A MACHINE (there is room for as many as you need):
+         1. Copy one whole <li class="machine"> ... </li> block below and paste it
+            after the last one.
+         2. Change the address in three places: the heading, the address line,
+            and the "Get directions" link (use + instead of spaces in the link).
+         3. Set the pin: in Google Maps, right-click the exact spot and click the
+            two numbers at the top of the menu to copy them. The first number goes
+            in data-lat, the second in data-lng.
+         The map picks up every machine in this list automatically.
+         ====================================================================== -->
+    <section class="section section--light" id="vending-machines" aria-labelledby="machines-heading">
+      <div class="container">
+        <div class="prose">
+          <span class="eyebrow eyebrow--dark">Around El Paso</span>
+          <h2 id="machines-heading">Naloxone vending machines</h2>
+          <p>
+            You can also get naloxone from vending machines in El Paso.
+            More locations will be added here as they are confirmed.
+          </p>
+          <!-- TODO (leadership): Confirm before launch, then add a sentence here:
+                     - Is naloxone from the machines free?
+                     - Are the machines outside / available at any hour, or only when the building is open?
+                     - What is each site called (the name people would recognize)?
+                     - Addresses of the other machines (about 6 total in the city, per Andres — unconfirmed). -->
+        </div>
+
+        <ul class="machine-list" role="list">
+
+          <li class="machine" data-lat="31.7680" data-lng="-106.4865">
+            <!-- TODO: pin position is approximate (within about a block). Replace data-lat / data-lng
+                       with the exact numbers from Google Maps (right-click the spot). -->
+            <h3 class="machine__name">800 Montana Ave</h3>
+            <p class="machine__address">800 Montana Ave, El Paso, TX 79902</p>
+            <p class="machine__note">At Punto de Partida, our drop-in center.</p>
+            <a class="link-arrow" style="color:var(--brown-dark);" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&amp;query=800+Montana+Ave+El+Paso+TX+79902">
+              Get directions<span class="visually-hidden"> to 800 Montana Ave (opens in a new tab)</span>
+            </a>
+          </li>
+
+          <li class="machine" data-lat="31.7861" data-lng="-106.4529">
+            <!-- TODO: pin position is approximate (within about a block). Replace data-lat / data-lng
+                       with the exact numbers from Google Maps (right-click the spot). -->
+            <h3 class="machine__name">3501 Hueco Ave</h3>
+            <p class="machine__address">3501 Hueco Ave, El Paso, TX 79903</p>
+            <a class="link-arrow" style="color:var(--brown-dark);" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&amp;query=3501+Hueco+Ave+El+Paso+TX+79903">
+              Get directions<span class="visually-hidden"> to 3501 Hueco Ave (opens in a new tab)</span>
+            </a>
+          </li>
+
+          <!-- Paste the next machine here (see the instructions above this section). -->
+
+        </ul>
+
+        <div class="machine-map-wrap">
+          <button type="button" class="btn btn--primary" id="machine-map-button" aria-controls="machine-map" aria-expanded="false">
+            Show the map
+          </button>
+          <p class="machine-map__hint" id="machine-map-hint">
+            The map loads from OpenStreetMap when you tap the button.
+          </p>
+          <div id="machine-map" class="machine-map" hidden role="region" aria-label="Map of naloxone vending machines in El Paso. The same locations are listed above."></div>
+        </div>
+
+        <p class="machine-map__hint">
+          Questions about a machine? Call the Naloxone Hub at
+          <a href="tel:+19153009521">(915) 300-9521</a>.
+        </p>
       </div>
     </section>
 
@@ -304,31 +376,21 @@
           </p>
 
           <dl style="margin-top:var(--space-6);display:grid;grid-template-columns:max-content 1fr;gap:var(--space-2) var(--space-6);font-size:var(--text-base);">
-            <dt style="font-weight:700;color:var(--yellow);">Counties served</dt>
-            <dd style="color:var(--color-text-muted);">
-              <!-- TODO: List all Region 10 counties. -->
-            </dd>
+            <!-- ROW HIDDEN until confirmed. Label: "Counties served". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: List all Region 10 counties. -->
 
-            <dt style="font-weight:700;color:var(--yellow);">Who can request</dt>
-            <dd style="color:var(--color-text-muted);">
-              <!-- TODO: Confirm eligibility for organizational requests. -->
-            </dd>
+            <!-- ROW HIDDEN until confirmed. Label: "Who can request". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: Confirm eligibility for organizational requests. -->
 
-            <dt style="font-weight:700;color:var(--yellow);">How to request</dt>
-            <dd style="color:var(--color-text-muted);">
-              <!-- TODO: Add form link or contact person for organizational requests. -->
-            </dd>
+            <!-- ROW HIDDEN until confirmed. Label: "How to request". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: Add form link or contact person for organizational requests. -->
 
-            <dt style="font-weight:700;color:var(--yellow);">Quantities / turnaround</dt>
-            <dd style="color:var(--color-text-muted);">
-              <!-- TODO: Confirm typical quantities supplied and turnaround time. -->
-            </dd>
+            <!-- ROW HIDDEN until confirmed. Label: "Quantities / turnaround". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: Confirm typical quantities supplied and turnaround time. -->
 
-            <dt style="font-weight:700;color:var(--yellow);">Program / funding credit</dt>
-            <dd style="color:var(--color-text-muted);">
-              <!-- TODO: Confirm whether a state program name or logo must be displayed
+            <!-- ROW HIDDEN until confirmed. Label: "Program / funding credit". To show it, add a <dt> with the label and a <dd> with the answer, copying a row above.
+                 TODO: Confirm whether a state program name or logo must be displayed
                          per funding requirements. -->
-            </dd>
           </dl>
 
           <!-- TODO: Confirm whether organizational requests should go to a Formspree form
