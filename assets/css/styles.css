@@ -1966,3 +1966,56 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links on the brown band are black, so they are readable (white was too faint). */
 .section--royal .link-arrow--light { color: var(--black); }
+
+/* -----------------------------------------------------------------------------
+   Flyer curtain (schedule.html): the flyer drops down from the top in steps,
+   like a curtain, when the page opens. Pure CSS, so it works without JavaScript.
+   To change the speed, edit 1.6s. To change how many "drops", edit steps(10).
+   People who turn off motion see the whole flyer right away.
+   ----------------------------------------------------------------------------- */
+.page-hero--compact { padding-block: var(--space-10) var(--space-8); }
+
+.flyer-curtain {
+  display: block;
+  max-width: 1100px;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: var(--white);
+  animation: flyer-drop 1.6s steps(10, end) 0.25s both;
+}
+
+.flyer-curtain img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flyer-curtain:focus-visible {
+  outline: 3px solid var(--brown-dark);
+  outline-offset: 4px;
+}
+
+@keyframes flyer-drop {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+.flyer-note {
+  max-width: 1100px;
+  margin: var(--space-4) auto 0;
+  font-size: var(--text-sm);
+  color: #444;
+}
+
+.flyer-note a { color: var(--black); font-weight: 700; }
+
+.flyer-actions {
+  max-width: 1100px;
+  margin: var(--space-6) auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+}

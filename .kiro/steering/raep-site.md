@@ -47,6 +47,7 @@ peer-support.html        (Peer Support: How We Work — RAEP's approach across a
 casa-vida.html           (residential recovery home)
 alas-nuevas.html         (women's residential program)
 contact.html
+schedule.html            (the Services & Schedule flyer on its own page; drops down like a curtain)
 privacy.html             (plain-language privacy page — linked from the footer and the contact form)
 404.html
 sitemap.xml              (list of pages for search engines — add a line when a page is added)
@@ -304,10 +305,11 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
   `hidden` attribute. Home page photo placeholders were removed (TODO comments remain).
 - Contact form: until `action="TODO-FORM-ENDPOINT"` is replaced, main.js stops the submit and
   shows "This form is not connected yet" with the phone number.
-- Curtain drop: on punto-de-partida.html the schedule table rows drop in one after another when
-  scrolled into view; the "See our weekly schedule" link jumps there and replays it. Markup:
-  `data-curtain` on the table wrapper, `data-curtain-trigger` on the link. Off for visitors who
-  turn off motion.
+- Curtain drop: "See our weekly schedule" on punto-de-partida.html opens schedule.html, where
+  the flyer drops down from the top in steps like a curtain (CSS only, `.flyer-curtain`).
+  The schedule table rows on punto-de-partida.html also drop in one after another when
+  scrolled into view (`data-curtain` on the table wrapper). Both are off for visitors who
+  turn off motion. When the flyer changes, replace the image AND update the text table.
 - Images: flyers are WebP; header uses logo-mark-small.png; Be Well Texas logo is WebP;
   partner logos lazy-load.
 - Every page has a canonical link; the home page has organization data for search engines
