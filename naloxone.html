@@ -14,14 +14,13 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Recovery Alliance of El Paso logo: four hands in black, yellow, red, and brown reaching toward each other" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://recovery-alliance-ep.github.io/naloxone.html" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <!-- TODO: if RAEP moves to its own domain, update og:url and og:image to the new domain -->
   <title>Region 10 Naloxone Distribution Hub — Recovery Alliance of El Paso</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -33,7 +32,7 @@
     <div class="container">
       <a href="index.html" class="site-logo" aria-label="Recovery Alliance of El Paso — home">
         <span class="site-logo__badge">
-          <img src="assets/img/logo-mark.png" alt="" width="28" height="28" aria-hidden="true" />
+          <img src="assets/img/logo-mark-small.png" alt="" width="28" height="28" aria-hidden="true" />
         </span>
         <span class="site-logo__text">
           <span class="site-logo__name">Recovery Alliance</span>
@@ -406,15 +405,14 @@
           <p class="footer-brand__name">Recovery Alliance of El Paso</p>
           <p class="footer-brand__tagline">A peer-led Recovery Community Organization serving El Paso and West Texas. No stigma. No shame.</p>
           <a href="tel:+19155947000" class="footer-brand__phone" aria-label="Call Recovery Alliance at (915) 594-7000">(915) 594-7000</a>
-          <!-- TODO: Add physical address when confirmed. -->
           <!-- TODO: Add email address when confirmed. -->
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
           <h3>Navigation</h3>
           <ul role="list">
             <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Programs</a></li>
             <li><a href="peer-support.html">Peer Support</a></li>
             <li><a href="punto-de-partida.html">Punto de Partida</a></li>
             <li><a href="naloxone.html">Region 10 Naloxone Hub</a></li>
@@ -424,6 +422,7 @@
             <li><a href="dwi-program.html">DWI Program</a></li>
             <li><a href="partners.html">Partners &amp; Funders</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
           </ul>
         </nav>
         <div class="footer-contact">
@@ -432,7 +431,6 @@
             800 Montana Ave, El Paso, TX 79902<br />
             <!-- TODO: Insert email address when confirmed. -->
             <!-- TODO: Insert Facebook page URL when confirmed. -->
-            <!-- TODO: Add additional social media links if applicable. -->
             <a href="tel:+19155947000">(915) 594-7000</a><br />
             <a href="tel:+19152620002">(915) 262-0002</a> — Punto de Partida (drop-in center)<br />
             Drop-in hours:<br />
@@ -444,11 +442,11 @@
       </div>
       <div class="footer-crisis">
         <p class="footer-crisis__line">Crisis line: call or text <a href="tel:988">988</a></p>
-        <p class="footer-crisis__line" style="font-weight:400;color:var(--color-text-muted);font-size:var(--text-xs);">In a crisis, call or text 988. In an emergency, call 911.</p>
+        <p class="footer-crisis__line footer-crisis__line--note">In a crisis, call or text 988. In an emergency, call 911.</p>
       </div>
       <div class="footer-copy">
         <p>© 2026 Recovery Alliance of El Paso (El Paso Alliance Inc.) · Website by Andres Chavez</p>
-        <p><!-- TODO: Add privacy policy link when page is created. --></p>
+        <p><a href="privacy.html">Privacy</a></p>
       </div>
     </div>
   </footer>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://recovery-alliance-ep.github.io/sitemap.xml

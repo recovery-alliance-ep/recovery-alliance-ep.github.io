@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- If RAEP moves to its own domain, replace the address on every line below. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://recovery-alliance-ep.github.io/</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/about.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/services.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/peer-support.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/punto-de-partida.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/naloxone.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/casa-vida.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/alas-nuevas.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/reentry.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/dwi-program.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/partners.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/contact.html</loc></url>
+  <url><loc>https://recovery-alliance-ep.github.io/privacy.html</loc></url>
+</urlset>

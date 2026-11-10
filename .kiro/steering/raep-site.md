@@ -47,9 +47,13 @@ peer-support.html        (Peer Support: How We Work — RAEP's approach across a
 casa-vida.html           (residential recovery home)
 alas-nuevas.html         (women's residential program)
 contact.html
+privacy.html             (plain-language privacy page — linked from the footer and the contact form)
 404.html
+sitemap.xml              (list of pages for search engines — add a line when a page is added)
+robots.txt
 assets/css/styles.css
-assets/js/main.js        (mobile menu + nav dropdowns/accordions)
+assets/js/main.js        (mobile menu, nav dropdowns/accordions, contact form guard, schedule curtain drop)
+assets/fonts/            (Poppins + Open Sans, hosted on the site — no Google Fonts link)
 assets/img/
 CNAME                    (added later, once the domain is sorted out)
 ```
@@ -60,8 +64,9 @@ CNAME                    (added later, once the domain is sorted out)
 - Gold/yellow accent + primary buttons: ~#E6C640
 - White text on dark; near-black text (#111) on light/gold
 - Logo colors (hands logo): red, yellow, black, tan — can be used as small accents
-- Headings: Poppins, bold (Google Fonts)
-- Body: Open Sans (Google Fonts)
+- Headings: Poppins, bold. Body: Open Sans. Both are hosted in `assets/fonts/` and declared
+  at the top of styles.css. Do NOT add Google Fonts links (privacy page says the site contacts
+  no other company).
 - Rounded cards (~16px radius), soft shadows, small uppercase eyebrow labels above headings
 - Primary button: gold fill, dark text. Secondary: underlined text link with arrow.
 
@@ -287,3 +292,30 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 - Red (`btn--danger`) only for the most urgent action: Get Help Now / Get Naloxone.
 - Logo: `assets/img/logo-mark.png` in the header on a white badge; `assets/img/logo-full.png` for the home page, on a light background.
 - Note: class names `section--royal` (now brown) and `section--navy` (now black) are leftovers from the old palette.
+
+## Changes made Nov 9, 2026 (built ahead of leadership review — they decide what to remove)
+- privacy.html added. It says: no tracking, no analytics, no cookies, fonts hosted on the site,
+  contact form delivered by Formspree. If analytics, embeds (video, maps), or a different form
+  service are ever added, update privacy.html in the same change.
+  TODO (leadership): approve the page; decide whether to link a Notice of Privacy Practices.
+- Footer is identical on every page: adds Home and Privacy links; "Services" is now "Programs".
+- Sections with no confirmed content are hidden, not deleted: empty headings on alas-nuevas.html
+  and dwi-program.html became HTML comments; the "Connect with us" box on contact.html has the
+  `hidden` attribute. Home page photo placeholders were removed (TODO comments remain).
+- Contact form: until `action="TODO-FORM-ENDPOINT"` is replaced, main.js stops the submit and
+  shows "This form is not connected yet" with the phone number.
+- Curtain drop: on punto-de-partida.html the schedule table rows drop in one after another when
+  scrolled into view; the "See our weekly schedule" link jumps there and replays it. Markup:
+  `data-curtain` on the table wrapper, `data-curtain-trigger` on the link. Off for visitors who
+  turn off motion.
+- Images: flyers are WebP; header uses logo-mark-small.png; Be Well Texas logo is WebP;
+  partner logos lazy-load.
+- Every page has a canonical link; the home page has organization data for search engines
+  (name, legal name, address, main phone only).
+- Contrast fixes: text on the brown band is black; Services page call-to-action text is white.
+
+## To do next
+- Spanish version: plan is an `/es/` folder with a copy of each page and an EN | ES switch in
+  the header. Do after English copy is approved. Needs a fluent staff reviewer.
+- "Get Help Now" header button and grouped Programs menu (ideas saved Nov 7).
+- Naloxone vending machine map (needs confirmed machine locations).

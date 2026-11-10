@@ -4,6 +4,17 @@
    ============================================================================= */
 
 /* -----------------------------------------------------------------------------
+   0. Fonts — hosted on this site (assets/fonts/), not loaded from Google.
+      Poppins = headings, Open Sans = body. Both are open-license (SIL OFL).
+   ----------------------------------------------------------------------------- */
+@font-face { font-family: 'Poppins';   font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/poppins-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins';   font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/poppins-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/open-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Open Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url('../fonts/open-sans-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/open-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/open-sans-latin-700-normal.woff2') format('woff2'); }
+
+/* -----------------------------------------------------------------------------
    1. Design tokens
    ----------------------------------------------------------------------------- */
 :root {
@@ -830,10 +841,12 @@ h1, h2, h3, h4, h5, h6 {
 .footer-nav ul {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .footer-nav a {
+  display: inline-block;
+  padding-block: var(--space-1);   /* taller tap target on phones */
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   text-decoration: none;
@@ -1864,3 +1877,92 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 180px;
   }
 }
+
+
+/* =============================================================================
+   Nov 2026 additions
+   ============================================================================= */
+
+/* Anything marked hidden in the HTML stays hidden, whatever its class says. */
+[hidden] { display: none !important; }
+
+/* Footer: small note next to the crisis line, and the Privacy link */
+.footer-crisis__line--note {
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.footer-copy a {
+  display: inline-block;
+  padding-block: var(--space-1);
+  color: var(--color-text-muted);
+  text-decoration: underline;
+}
+
+.footer-copy a:hover { color: var(--white); }
+
+.footer-copy a:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Home CTA with no photo: one centered column */
+.cta-grid--solo {
+  grid-template-columns: 1fr !important;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* Contact form: message shown when the form is not connected yet */
+.form-status {
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-left: 4px solid var(--red);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background-color: var(--offwhite);
+  color: var(--black);
+  font-size: var(--text-sm);
+}
+
+.form-status a { color: var(--black); font-weight: 700; }
+
+/* -----------------------------------------------------------------------------
+   Curtain drop: the weekly schedule rows drop in one after another.
+   main.js adds .curtain (rows waiting) and then .is-dropped (rows fall in).
+   With JavaScript off, or motion turned off, the table simply shows.
+   ----------------------------------------------------------------------------- */
+#weekly-schedule { scroll-margin-top: calc(var(--header-height) + var(--space-6)); }
+#weekly-schedule:focus { outline: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .curtain tbody tr > * {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+
+  .curtain.is-dropped tbody tr > * {
+    animation: curtain-drop 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+    animation-delay: calc(var(--row, 0) * 110ms);
+  }
+}
+
+@keyframes curtain-drop {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* People who turn off motion on their device get no smooth scrolling or animation. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Links on the brown band are black, so they are readable (white was too faint). */
+.section--royal .link-arrow--light { color: var(--black); }
