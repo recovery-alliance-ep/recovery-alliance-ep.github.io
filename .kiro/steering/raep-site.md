@@ -325,7 +325,11 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 - Machines so far: 800 Montana Ave 79902 and 3501 Hueco Ave 79903.
   TODO: pin positions are approximate; replace with exact numbers from Google Maps.
   TODO: about 6 machines in the city (unconfirmed) — get the other addresses.
-  TODO (leadership): free or not, hours/access, site names. Do not state these until confirmed.
+  All machines give naloxone for free (confirmed by Andres, Nov 9, 2026).
+  TODO (leadership): hours/access, site names. Do not state these until confirmed.
+- Organization naloxone requests: the button in `#organizations` opens an email to the Naloxone Hub
+  coordinator, mtavares@recoveryalliance.net (given by Andres, Nov 9, 2026), with the Hub phone
+  (915) 300-9521 beside it. TODO (leadership): confirm the inbox; a shared Hub address is better.
 - Rows with no confirmed answer on naloxone.html (ID required, training at pickup, Region 10
   counties, how organizations request) are hidden as HTML comments until confirmed.
 
