@@ -249,6 +249,15 @@ Overview only: one short card per program linking to its page — peer coaching,
 recovery groups, Punto de Partida, Casa Vida, Alas Nuevas, Re-entry, DWI program,
 linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 
+### iop.html — Intensive Outpatient Program (IOP) (added Nov 12, 2026)
+- Status: scaffold only. Per Andres: IOP is part of Recovery Alliance, on the billable side (TODO: confirm).
+- Leadership approved listing IOP with "low to no cost" language (Oct 2026). TODO: reconfirm exact wording.
+- Same rule as Casa Vida: DO NOT publish "treatment / licensed professionals / ASAM" claims
+  until leadership confirms a current treatment license and licensed clinicians.
+- All details are hidden TODO comments in iop.html: what it offers, who provides it, schedule,
+  length, eligibility, cost/insurance, intake, telehealth, and how it connects to peer support.
+- Linked after DWI Program in both nav menus, the footer on every page, and sitemap.xml.
+
 ## Approved decisions (as of Nov 7, 2026)
 - Accreditation: Council on Accreditation of Peer Recovery Support Services (CAPRSS).
   State on Home and About pages. Already live.
@@ -264,6 +273,7 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
   New photos of people still need documented consent before publishing.
 
 ## Open items
+- IOP page: all program details + treatment-license confirmation (see iop.html TODOs).
 - Contact info: email, hours, social links (Facebook page exists — TODO: get URL)
 - Original logo files (RAEP, Punto de Partida, Salvavida, Naloxone Hub) — still needed
   in high resolution; image reuse policy covers photos already on the old site, not source files
