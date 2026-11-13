@@ -2092,3 +2092,48 @@ h1, h2, h3, h4, h5, h6 {
 .leaflet-popup-content { font-family: var(--font-body); font-size: var(--text-sm); }
 .leaflet-popup-content strong { font-family: var(--font-heading); display: block; }
 .leaflet-container a { color: var(--brown-dark); }
+
+/* ---- Donate page ---- */
+.donate-options {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+.donate-option {
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  padding: var(--space-4);
+  background: #fff;
+}
+.donate-option__title {
+  margin-top: 0;
+}
+.donate-option__pending {
+  font-style: italic;
+  color: #555;
+}
+.donate-crypto {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.donate-crypto li {
+  display: grid;
+  gap: 2px;
+}
+
+/* ---- Header Donate button ---- */
+.header-donate {
+  margin-left: var(--space-2);
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+}
+.mobile-nav__donate {
+  display: block;
+  margin: var(--space-4) auto 0;
+  text-align: center;
+  max-width: 260px;
+}
