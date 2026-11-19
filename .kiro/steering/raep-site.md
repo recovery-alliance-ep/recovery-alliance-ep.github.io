@@ -205,19 +205,22 @@ Build each with the shared header/footer, a page hero, and clearly marked TODO s
 Every program description must be confirmed by leadership before launch.
 
 ### casa-vida.html — Casa Vida de Salud (residential recovery home, central El Paso)
-Structure: What it is · Who it serves · Daily life · Support we connect you to ·
-Multiple pathways · How to get in.
-- Known from old site: adults 18+, structured daily curriculum, recovery coaching,
-  life skills groups, education on substance use, spiritual support, introduction to
-  12-step and faith-based programs, social/recreational events, Texas certified peer
-  support, meals, free Narcan.
-- TODO: confirm current bed count (old site says 37 — may be outdated).
-- TODO: confirm length of stay (old site says both "long-term" and "up to 3 months").
-- TODO: confirm meals (old site says 3 daily).
+Structure: What it is · Who it serves · Program options · Daily life ·
+Support we connect you to · How to get in.
+- Confirmed by Cassandra (Casa Vida verification sheet, Nov 18, 2026): men only, 18+;
+  65 beds; 90-day program; Project Homes is the name of the MAT/MOUD program (also 90 days);
+  three meals a day; 3 recovery groups a day; outside NA/AA meetings every day of the week;
+  self-referrals and referrals; waitlist (the Director gives availability, next steps,
+  and follow-up); intake calls start at 8 a.m.; bring an ID if you have one, OK if not;
+  refers to San Vicente, MedMark, Aliviane; street address OK to publish.
+- Still from old site: opened Feb 14, 2005; peer coaching, life skills, education,
+  spiritual support, 12-step/faith-based intro, social events, free Narcan.
+- TODO: street address (approved to publish, not yet received).
+- TODO: intake phone number and days; sober living wording; leadership OK to name
+  referral providers and their official names.
 - DO NOT publish the old IOP/SOP or "licensed professionals / ASAM / individualized
   treatment" text unless leadership confirms a current treatment license and licensed
   clinicians. Default wording: "We connect residents to treatment and MOUD providers."
-- TODO: "Project Home Program" — confirm whether this is a current program name.
 
 ### alas-nuevas.html — Alas Nuevas (women's residential program)
 - TODO: all details (who it serves, length of stay, services, how to get in).
@@ -250,12 +253,13 @@ recovery groups, Punto de Partida, Casa Vida, Alas Nuevas, Re-entry, DWI program
 linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
 
 ### iop.html — Intensive Outpatient Program (IOP) (added Nov 12, 2026)
-- Status: scaffold only. Per Andres: IOP is part of Recovery Alliance, on the billable side (TODO: confirm).
-- Leadership approved listing IOP with "low to no cost" language (Oct 2026). TODO: reconfirm exact wording.
+- Status: COMING SOON page only (Nov 18, 2026). Claudia asked that no program details
+  go up until everything is final, so nobody is misled. Do not add details, cost
+  ("low to no cost"), or schedule until Claudia confirms.
+- The page shows a short "coming soon" note, links to programs open now, the main
+  phone line, and 988/911. The list of details to confirm is in a comment in iop.html.
 - Same rule as Casa Vida: DO NOT publish "treatment / licensed professionals / ASAM" claims
   until leadership confirms a current treatment license and licensed clinicians.
-- All details are hidden TODO comments in iop.html: what it offers, who provides it, schedule,
-  length, eligibility, cost/insurance, intake, telehealth, and how it connects to peer support.
 - Linked after DWI Program in both nav menus, the footer on every page, and sitemap.xml.
 
 ## Approved decisions (as of Nov 7, 2026)
@@ -273,7 +277,7 @@ linkage to treatment/MOUD/housing/health care, IDs/paperwork/jobs help.
   New photos of people still need documented consent before publishing.
 
 ## Open items
-- IOP page: all program details + treatment-license confirmation (see iop.html TODOs).
+- IOP page: on hold as "coming soon" until Claudia confirms the details (see iop.html comment).
 - Contact info: email, hours, social links (Facebook page exists — TODO: get URL)
 - Original logo files (RAEP, Punto de Partida, Salvavida, Naloxone Hub) — still needed
   in high resolution; image reuse policy covers photos already on the old site, not source files
